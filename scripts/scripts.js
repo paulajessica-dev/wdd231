@@ -109,6 +109,10 @@ function displayCourses(list){
 		container.appendChild(card);
 	});
 
+    const totalCredits = list.reduce((sum,course)=>sum+course.credits,0);
+
+    document.querySelector("#credits").textContent = totalCredits;
+
 };
 
 displayCourses(courses);
@@ -121,9 +125,6 @@ const cse = courses.filter(course=>course.subject==="cse");
 
 displayCourses(cse);
 
-const totalCredits = courses.reduce((sum,course)=>sum+course.credits,0);
-
-document.querySelector("#credits").textContent = totalCredits;
 
 document.querySelector("#all").addEventListener("click", () => {
     displayCourses(courses);
