@@ -7,8 +7,9 @@
   --gray-light: #e0e2e3;
   --gray: #1b263b;
   --dark: #1b263b;
-  --glass: rgba(255, 255, 255, 0.7);
-  --shadow: 0 4px 12px rgba(0,0,0,0.2);
+  --black: #00000033;
+  --glass: #FFFFFFB3;
+  --shadow: 0 4px 12px var(--black);
 }
 
 
