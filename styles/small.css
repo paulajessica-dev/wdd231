@@ -99,8 +99,7 @@ nav {
     display: block;
     background: none;
     border: none;
-    color: var(--primary);
-    font-size: 2rem;
+    color: var(--primary);    
     cursor: pointer;
     font-size: clamp(1.4rem, 2vw, 3rem);
 }
