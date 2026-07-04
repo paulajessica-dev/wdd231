@@ -1,0 +1,79 @@
+:root {  
+  --primary: #1D3557; 
+  --secondary: #2A9D8F;
+  --blueclear: #3fead6;  
+  --white: #FFFFFF;
+  --light: #F8F9FA;
+  --gray-light: #e0e2e3;
+  --gray: #1b263b;
+  --dark: #1b263b;
+  --glass: rgba(255, 255, 255, 0.7);
+  --shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    padding: 0 .7rem;
+}
+
+
+@media (min-width: 320px) {
+
+	header {
+		display: block;
+		align-items: center;		
+		font-size: clamp(1rem, 2vw, 2.5rem);
+	}
+
+	nav {
+        width:100%;		
+		font-size: clamp(1rem, 2vw, 2rem);
+	}
+
+	.navigation {
+		display: flex;
+		flex-direction: row;
+        justify-content:flex-start;
+		gap: .5rem;
+		padding: 0;
+		margin: 0;
+		
+	}
+
+	.navigation a {
+		padding: 0.7rem;
+        font-size: clamp(1.2rem, 1vw, 2.5rem);
+		transition: background-color 0.3s ease;
+        color: var(--light);
+		
+	}
+
+	#menu {
+		display: none;
+	}
+
+    .main-grid{
+        display:grid;
+        grid-template-columns:2fr 1fr;
+        gap:1rem;
+        margin-top: .5rem;
+    }
+
+    .buttons{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    #courses{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
