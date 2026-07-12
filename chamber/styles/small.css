@@ -151,7 +151,7 @@ main{
 
 button {
     background: var(--secondary);
-    color: var(--primary-dark);
+    color: var(--accentclear);
     height: 26px;
     width: 56px;
     border: none;
