@@ -13,7 +13,7 @@
     --border: #d7dbdf;    
     --text-dark: #203040;
     --text-light: #FFFFFF;
-    --text-muted: #6B7280;    
+    --text-muted: #4B5563;    
     --success: #1FA774;
     --hover: #0F6EA8;   
     --fs-title: clamp(1.1rem, 2vw, 1.5rem);
@@ -72,6 +72,13 @@ body{
     font-weight:600;
     font-size: var(--fs-small);
     color: var(--text-muted);
+}
+
+.site-name {
+    font-size: var(--fs-subtitle);
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin: 0;
 }
 
 h1, h2 {
@@ -144,7 +151,7 @@ main{
 
 button {
     background: var(--secondary);
-    color: var(--text-light);
+    color: var(--primary-dark);
     height: 26px;
     width: 56px;
     border: none;
@@ -270,49 +277,4 @@ button:hover {
 	color: var(--primary-dark);
     font-size: var(--fs-small)
 	
-}
-
-@media (min-width:360px){
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: var(--accentclear);
-        border-bottom: 2px solid var(--border);
-        box-shadow: 0 2px 8px rgba(0,0,0,.08);
-        
-    }
-
-    #menu{
-        display:none;
-    }
-
-    nav {        
-        margin-left: auto;       
-
-    }
-    
-    .navigation {
-        display: flex;
-        list-style: none;
-        justify-content: flex-start;        
-        gap: 2rem;
-    }
-
-    .navigation a {
-        text-decoration: none;
-        color: var(--primary);
-        font-size: var(--fs-subtitle);
-        font-weight: 600;
-        transition: .2s;
-        border-bottom: none;
-    }
-
-    .navigation a:hover {
-        color: var(--secondary);
-    }
-
-
-
 }
