@@ -4,7 +4,7 @@
     --primary-dark: #073A63;
     --primary-light: #2A7FB3;    
     --secondary: #27B7C8;
-    --secondary-light: #56D3D3;    
+    --secondary-light: #c4f2f2;    
     --accent: #E7C46A;
     --accentclear: #ebe1c6;
     --accent-dark: #CDA64B;    
@@ -112,9 +112,7 @@ main{
 .navigation.open {
     display: flex;
     flex-direction: column;
-    background-color: var(--accentclear);
-
-  
+    background-color: var(--accentclear);  
 }
 
 #menu {
@@ -134,20 +132,11 @@ main{
     content: "✖";
 }
 
-
-.gallery {
+.buttonsmember {
     display: flex;    
     padding: 1rem;
     justify-content: center;
 }
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-    
-}
-
 
 button {
     background: var(--primary-dark);
@@ -161,6 +150,51 @@ button {
 
 button:hover {
     background: var(--hover);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;    
+}
+
+.list {
+    display: flex;
+    flex-direction: column;    
+}
+
+.list-row{
+    grid-template-columns: 1fr;
+    font-size: var(--fs-small);
+    justify-items: center;    
+}
+
+.list-row p,
+.list-row a{
+    display: flex;
+    margin:0;
+    padding-top: .5rem;
+    align-items: center;
+}
+
+.list-row p:first-child {
+    font-weight: 700;
+    font-size: var(--fs-subtitle);
+    color: var(--primary-dark);
+}
+
+.list-row:nth-child(even) {
+    background: var(--background);
+}
+
+.list-row:nth-child(odd) {
+    background: var(--secondary-light);
+}
+
+.list-row a {
+    color: var(--primary);
+    text-decoration: none;
+    padding-bottom: .5rem;
 }
 
 .member-card {
@@ -202,19 +236,20 @@ button:hover {
 }
 
 .member-info p {
-    display: grid;
-    grid-template-columns: 45px 1fr;
-    
+    display: flex;
+    justify-content: center;    
     align-items: start;
     word-break: break-word;
 }
 
 
 .member-info a {
+    display: flex;
     color: var(--primary);   
     font-weight: 600;
     text-decoration: none;    
     word-break: break-word;
+    justify-content: center;    
     
 }
 

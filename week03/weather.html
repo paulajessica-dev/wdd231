@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wdd 231 - Course Home Page</title>
+    <meta name="description" content="Personal course homepage developed for WDD231 using HTML, CSS, JavaScript, and responsive web design principles.">
+    <meta name="author" content="Paula Jessica Silva">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/small.css">  
+    <link rel="stylesheet" href="styles/large.css">    
+    <script src="scripts/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="logo">
+                <img src="images/logo.svg" alt="Site Logo">
+                <span>Paula Jessica Silva</span>
+            </div>
+            <button type="button" id="menu" aria-label="Open navigation menu"></button>
+        </div>            
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explorer.html">Chamber</a></li>
+                <li><a href="explorer.html">Final</a></li>
+            </ul>
+        </nav>
+        <div class="stuff"></div> 
+    </header>
+    <main>
+        <h1>Home</h1>
+        <div class="main-grid">
+            <section class="aboutme">
+                <h2>About Me</h2>
+                <p>
+                    Hi! My name is Paula, and I’m from Brazil.
+                    In my free time, I love watching movies, going to the beach, and spending time with my family.
+                    I’m a friendly and curious person. I’m constantly looking to learn new things and grow both personally and professionally. I’m excited to learn even more on this new journey!
+
+                </p>
+            </section>
+            <section class="profile">
+                <h2>Student Photo</h2>
+                <img src="images/myphoto.webp" alt="myphoto">
+            </section>
+            <section class="card courses">
+                <h2>Web Certificate Courses</h2>
+                <div class="buttons">
+                    <button id="all">All</button>
+                    <button id="wdd">WDD</button>
+                    <button id="cse">CSE</button>
+                </div>
+                <div id="courses"></div>
+                <p>Total Credits: <span id="credits"></span></p>
+
+            </section>
+        </div> 
+                
+    </main>
+        <footer>
+             <div class="social">
+                <a href="github"><img src="images/github.svg" alt="GitHub"></a>
+                <a href="linkedin"><img src="images/linkedln.svg" alt="LinkedIn"></a>
+                <a href="instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+            </div>
+            <div class="footer">
+                <p>
+                    ©<span id="currentyear"></span>
+                    🌺 Paula Jessica Silva 🌺
+                    Fortaleza, Ceará
+                </p>
+                <p id="lastModified"></p>
+            </div>         
+    </footer>
+   
+</body>
+</html>

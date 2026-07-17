@@ -16,8 +16,7 @@
     }
 
     nav {        
-        margin-left: auto;       
-
+        margin-left: auto; 
     }
     
     .navigation {
@@ -40,6 +39,11 @@
         color: var(--secondary);
     }
 
-
-
+    .list-row {
+        display: grid;
+        grid-template-columns: 2fr 3fr 2fr 2fr;
+        align-items: center;
+        padding: 1rem;        
+        
+    }
 }
