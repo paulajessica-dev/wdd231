@@ -19,7 +19,6 @@
     --success:#1FA774;
     --hover:#0F6EA8;
     --shadow:rgba(0,0,0,.35);
-
     --fs-title:clamp(1.1rem,2vw,1.5rem);
     --fs-subtitle:clamp(.95rem,1.5vw,1.1rem);
     --fs-body:clamp(.875rem,1.2vw,1rem);
@@ -32,10 +31,8 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:var(--secondary-light);
-    color:var(--text-dark);
-    
+    font-family:'Poppins',sans-serif;    
+    color:var(--text-dark);    
 }
 
 main{
@@ -211,8 +208,7 @@ nav {
     margin: .5rem 0;
 }
 
-.card{
-    background: rgba(255, 255, 255, 0.75);
+.card{   
     backdrop-filter: blur(8px);    
     border-radius:5px;
     padding:.8rem;
