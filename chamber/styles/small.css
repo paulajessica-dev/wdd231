@@ -126,8 +126,7 @@ nav {
     position: absolute;
     top: 100%; 
     left: 0;
-    width: 100%;
-    background: var(--accentclear);
+    width: 100%;    
     z-index: 1000;
 }
 
@@ -208,8 +207,7 @@ nav {
     margin: .5rem 0;
 }
 
-.card{   
-    backdrop-filter: blur(8px);    
+.card{      
     border-radius:5px;
     padding:.8rem;
     box-shadow:0 2px 8px rgba(0,0,0,.1);
@@ -323,8 +321,7 @@ nav {
     gap: 1rem;
 }
 
-.spotlight-card {
-    background: var(--background);
+.spotlight-card {   
     border-radius: 5px;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
