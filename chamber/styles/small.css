@@ -173,7 +173,7 @@ nav {
     flex-direction:column;  
     align-items:center;
     text-align:center;
-    color: var(--background);
+    color: var(--accentclear);
 
 }
 
@@ -188,8 +188,8 @@ nav {
 .cta-button{
     display:inline-block;
     padding:.7rem .7rem;
-    background:var(--accent);
-    color:var(--primary-dark);
+    background:var(--secondary-light);
+    color:var(--primary);
     text-decoration:none;
     border-radius:6px;
     font-weight:bold;
