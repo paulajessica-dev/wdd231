@@ -45,7 +45,7 @@ main{
 
 h1, h2 {
     font-size: var(--fs-subtitle);
-    color: var(--primary-dark);
+    color: var(--accentclear);
     padding-top: .5rem;
 }
 
@@ -183,7 +183,6 @@ nav {
 }
 
 .hero-content h1{
-    color:var(--background);
     margin-bottom:.5rem;
 }
 
