@@ -32,7 +32,6 @@
 
     .hero-content h1{
         font-size:var(--fs-subtitle);
-        color: var(--accentclear);
     }
 
     .hero-content p{
