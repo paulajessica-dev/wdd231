@@ -192,6 +192,7 @@ nav {
     align-items:center;
     text-align:center;
     color: var(--accentclear);
+    background: rgba(0,0,0,.45);
 
 }
 
