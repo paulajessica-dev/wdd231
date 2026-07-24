@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Paula Jessica Silva">
+    <meta property="og:title" content="Fortaleza Chamber of Commerce">
+    <meta property="og:description" content="Discover local businesses, upcoming events, weather updates, and featured member companies supporting economic growth in Fortaleza, Brazil.">
+    <meta property="og:image" content="https://paulajessica-dev.github.io/wdd231/chamber/images/fortaleza-logo.png">
+    <meta property="og:url" content="https://paulajessica-dev.github.io//wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Discover local businesses, upcoming events, weather updates, and featured member companies supporting economic growth in Fortaleza, Brazil.">
+    <title>Join | Fortaleza Chamber of Commerce</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/small.css">  
+    <link rel="stylesheet" href="styles/large.css">  
+    <script src="scripts/common.js" defer></script> 
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="logo">
+                <img src="images/logosemfundo.webp" alt="Fortaleza Chamber of Commerce Logo">
+                <div class="logo-text">
+                    <p class="site-name">Fortaleza</p>
+                    <span>Chamber of Commerce</span>
+                </div>
+            </div>
+            <button type="button" id="menu" aria-label="Open navigation menu"></button>
+        </div>      
+        <nav>         
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main>
+        <h1>Thank You!</h1>
+        <p>Thank you for applying to join the Fortaleza Chamber of Commerce.</p>
+        <section class="application-summary">
+            <h2>Application Summary</h2>
+            <p><strong>First Name:</strong> <span id="firstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Mobile:</strong> <span id="phone"></span></p>
+            <p><strong>Business:</strong> <span id="organization"></span></p>
+            <p><strong>Submitted:</strong> <span id="timestamp"></span></p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="social">
+                <a href="github"><img src="images/github.svg" alt="GitHub"></a>
+                <a href="linkedin"><img src="images/linkedln.svg" alt="LinkedIn"></a>
+                <a href="instagram"><img src="images/instagram.svg" alt="Instagram"></a>
+            </div>
+            <p>
+                ©<span id="currentyear"></span>
+                🌺 WDD231 Project - Paula Jessica Silva 🌺
+                Fortaleza, Ceará
+            </p>
+            <p id="lastModified"></p>
+        </div>         
+</footer>
+   
+</body>
+</html>

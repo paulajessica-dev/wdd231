@@ -1,0 +1,11 @@
+const params = new URLSearchParams(window.location.search);
+
+document.querySelector("#firstName").textContent = params.get("firstName");
+document.querySelector("#lastName").textContent = params.get("lastName");
+document.querySelector("#email").textContent = params.get("email");
+document.querySelector("#phone").textContent = params.get("phone");
+document.querySelector("#organization").textContent = params.get("organization");
+document.querySelector("#timestamp").textContent = params.get("timestamp");
+
+const date = new Date(params.get("timestamp"));
+document.querySelector("#timestamp").textContent = date.toLocaleString();

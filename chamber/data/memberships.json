@@ -1,0 +1,75 @@
+[
+  {
+    "id": "np",
+    "name": "NP Membership",
+    "shortDescription": "Designed for non-profit organizations.",
+    "annualFee": "Free",
+    "color": "#4CAF50",
+    "benefits": [
+      "Free membership for registered non-profit organizations.",
+      "Business listing in the Chamber directory.",
+      "Access to networking events.",
+      "Monthly Chamber newsletter.",
+      "Community partnership opportunities."
+    ],
+    "requirements": [
+      "Registered non-profit organization.",
+      "Valid documentation required."
+    ]
+  },
+  {
+    "id": "bronze",
+    "name": "Bronze Membership",
+    "shortDescription": "A great option for small businesses.",
+    "annualFee": "$100 / year",
+    "color": "#CD7F32",
+    "benefits": [
+      "Business directory listing.",
+      "Access to Chamber networking events.",
+      "Monthly newsletter.",
+      "Member discounts on workshops.",
+      "Invitation to local business meetings."
+    ],
+    "requirements": [
+      "Registered business.",
+      "Annual membership payment."
+    ]
+  },
+  {
+    "id": "silver",
+    "name": "Silver Membership",
+    "shortDescription": "Expanded visibility and business support.",
+    "annualFee": "$250 / year",
+    "color": "#B0B0B0",
+    "benefits": [
+      "Everything included in Bronze.",
+      "Featured placement in the business directory.",
+      "Advertising discounts.",
+      "Business training programs.",
+      "Priority registration for Chamber events."
+    ],
+    "requirements": [
+      "Registered business.",
+      "Annual membership payment."
+    ]
+  },
+  {
+    "id": "gold",
+    "name": "Gold Membership",
+    "shortDescription": "Maximum exposure and exclusive benefits.",
+    "annualFee": "$500 / year",
+    "color": "#D4AF37",
+    "benefits": [
+      "Everything included in Silver.",
+      "Homepage spotlight on the Chamber website.",
+      "Featured business promotion.",
+      "Premium event sponsorship opportunities.",
+      "Exclusive networking with business leaders.",
+      "Priority customer support."
+    ],
+    "requirements": [
+      "Registered business.",
+      "Annual membership payment."
+    ]
+  }
+]
