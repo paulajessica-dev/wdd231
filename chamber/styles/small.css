@@ -584,6 +584,9 @@ button:hover {
     border-radius:8px;
     background: var(--background);
     box-shadow:0 5px 12px rgba(0,0,0,.15);
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
 }
 
 input:required,
@@ -608,28 +611,27 @@ select:required:valid {
 .join-card:nth-child(1) {
     background-color: var(--npbackground-color);
     border-color: var(--npborder-color);
+    animation-delay:.2s;
 }
 
 .join-card:nth-child(2) {
     background-color: var(--bzbackground-color);
     border-color: var(--bzbackground-color);
+    animation-delay:.4s;
 }
 
 .join-card:nth-child(3) {
     background-color: var(--svbackground-color);
     border-color: var(--svbackground-color);
+    animation-delay:.6s;
 }
 
 .join-card:nth-child(4) {
     background-color: var(--gdbackground-color);
     border-color: var(--gdbackground-color);
+    animation-delay:.8s;
 }
 
-.join-card {
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeUp 0.8s ease forwards;
-}
 
 @keyframes fadeUp {
     from {
@@ -642,13 +644,6 @@ select:required:valid {
         transform: translateY(0);
     }
 }
-
-.join-card:nth-child(1){animation-delay:.2s;}
-.join-card:nth-child(2){animation-delay:.4s;}
-.join-card:nth-child(3){animation-delay:.6s;}
-.join-card:nth-child(4){animation-delay:.8s;}
-
-
 
 
 /* =========================
