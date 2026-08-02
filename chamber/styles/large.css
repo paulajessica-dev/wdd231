@@ -60,5 +60,24 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
+    
+    #allplaces{
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #allplaces div{
+        gap: 1rem;
+    }
+
+    #allplaces div img{
+        width: 200px;        
+
+    }
+
+     #allplaces div p{
+        padding-top: 1rem;    
+    }
+   
 
 }

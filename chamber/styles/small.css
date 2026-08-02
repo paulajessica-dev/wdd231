@@ -705,6 +705,55 @@ select:required:valid {
     color:var(--primary);
 }
 
+/* =========================
+   DISCOVERY
+========================= */
+
+#allplaces div img {
+    grid-area: photograph;  
+    
+}
+
+#allplaces div h2 {
+    grid-area: name;
+    display: flex;
+    justify-content: center;
+      
+}
+
+#allplaces div p {
+    grid-area: description;
+    align-items: center;
+    padding: 1rem;   
+   
+}
+
+#allplaces div address {
+    grid-area: location;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#allplaces div {
+    margin: 1rem 8px;
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    border-radius: 5px;
+    display: grid;
+    grid-template-areas: 
+    "name"
+    "photograph"
+    "description"
+    "location"
+    ;
+}
+
+#allplaces div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* =========================
    FOOTER
