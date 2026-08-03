@@ -1,4 +1,4 @@
-@media only screen and (min-width:768px){
+@media only screen and (min-width:1025px){
 
     #menu{
         display:none;
@@ -71,8 +71,7 @@
     }
 
     #allplaces div img{
-        width: 200px;        
-
+        width: 200px;
     }
 
      #allplaces div p{
