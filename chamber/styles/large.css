@@ -70,8 +70,12 @@
         gap: 1rem;
     }
 
-    #allplaces div img{
-        width: 200px;
+    #allplaces div img{     
+        transition: transform .3s ease;
+    }
+
+    #allplaces img:hover {
+        transform: scale(1.05);
     }
 
      #allplaces div p{
