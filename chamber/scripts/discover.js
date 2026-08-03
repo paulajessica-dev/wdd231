@@ -12,6 +12,9 @@ function displayItems(places) {
         thephoto.src = `images/${x.photo}`;
         thephoto.alt = x.name;
         thephoto.loading = "lazy";
+        thephoto.width = 350;
+        thephoto.height = 250;
+        thephoto.decoding = "async";
         thecard.appendChild(thephoto)
         
         const thetitle = document.createElement('h2')
