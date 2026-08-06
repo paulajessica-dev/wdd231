@@ -1,0 +1,35 @@
+@media only screen and (min-width:1025px){
+
+    #menu{
+        display:none;
+    }
+        
+    /* main {        
+        margin:1rem 1rem;    
+    } */
+
+    .logo img{  
+        width:150px;
+        height:40px;
+    }
+
+    .navigation {
+        display:flex;
+        flex-direction:row;
+        gap:2rem;
+        background:none;
+    }
+
+    .navigation a {
+        border:none;
+        padding:.5rem;
+        font-weight:600;
+        font-size: var(--fs-subtitle);
+        white-space: nowrap;
+        color: var(--primary-orange-dark);
+    }
+    
+    #popular-grid{
+        grid-template-columns:1fr;
+    }
+}

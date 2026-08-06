@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Paula Jessica Silva">
+    <meta property="og:title" content="Dog Explorer | Dog Breeds">
+    <meta property="og:description" content="Discover dog breeds, learn about their temperament, origin, life expectancy, and more.">
+    <meta property="og:image" content="images/dog-logo.webp">
+    <meta property="og:url" content="https://paulajessica-dev.github.io/wdd131/final-project/breeds.html">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Browse hundreds of dog breeds and discover information about each one using data from The Dog API.">
+    <title>Breeds | Dog Explorer</title>
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/common.js" defer></script>
+    <script src="scripts/breeds.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="top">
+        <div class="logo">
+            <img src="images/logo-pow.webp" alt="Dog Explorer Logo">
+            <div class="logo-text">
+                
+                
+            </div>
+        </div>
+        <button id="menu" aria-label="Open navigation menu"></button>
+    </div>
+    <nav>
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="breeds.html">Breeds</a></li>
+            <li><a href="funfacts.html">Fun Facts</a></li>
+            <li><a href="services.html">Services</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Dog Breeds</h1>
+    <section class="controls">
+        <div class="toolbar">
+            <input
+                type="search"
+                id="search"
+                placeholder="Search a breed..."
+                aria-label="Search dog breed">
+        </div>
+            <div class="view-buttons">
+                <button id="grid">Grid</button>
+                <button id="list">List</button>            
+            </div>
+    </section>
+    <section id="breeds-container">
+        <h2 class="visually-hidden">Dog Breeds</h2>
+    </section>
+    <dialog id="breed-modal">        
+        
+    </dialog>
+</main>
+<footer>
+    <div class="footer">
+        <div class="social">
+            <a href="#"><img src="images/github.svg" alt="GitHub"></a>
+            <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+        </div>
+        <p>
+            © <span id="currentyear"></span>
+            🐶 WDD231 Final Project - Paula Jessica Silva 🐶
+        </p>
+        <p id="lastModified"></p>
+    </div>
+</footer>
+</body>
+</html>

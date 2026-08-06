@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Paula Jessica Silva">
+    <meta property="og:title" content="Dog Explorer | Dog Breeds">
+    <meta property="og:description" content="Discover dog breeds, learn about their temperament, origin, life expectancy, and more.">
+    <meta property="og:image" content="images/dog-logo.webp">
+    <meta property="og:url" content="https://paulajessica-dev.github.io/wdd131/final-project/breeds.html">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Browse hundreds of dog breeds and discover information about each one using data from The Dog API.">
+    <title>Home | Dog Explorer</title>
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/common.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="top">
+        <div class="logo">
+            <img src="images/logo-pow.jpg" alt="Dog Explorer Logo">
+            <div class="logo-text">
+            </div>
+        </div>
+        <button id="menu" aria-label="Open navigation menu"></button>
+    </div>
+    <nav>
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="breeds.html">Breeds</a></li>
+            <li><a href="funfacts.html">Fun Facts</a></li>
+            <li><a href="services.html">Services</a></li>
+        </ul>
+    </nav>
+</header>
+<main>        
+    <section class="hero">
+        <h2 class="visually-hidden"></h2>
+            <picture>
+            <source  srcset="images/breeds_5.webp"  media="(min-width:768px)">
+            <img src="images/hero-small.webp" alt="Panoramic view of Many Dogs"  width="1200" height="600" loading="lazy">
+        </picture>
+        <div class="hero-content">
+            <h1>DogCare Hub</h1>
+            <p>
+                Discover dog breeds, learn amazing facts,
+                and find trusted pet services all in one place.
+            </p>
+            <a href="breeds.html" class="cta-button">Explore Breeds</a>
+        </div>
+    </section>        
+    <section class="features">
+    <h2>What can you explore?</h2>
+    <div class="features-grid">
+        <article class="feature-card">
+            <div class="feature-icon">🐶</div>
+                <h3>Dog Breeds</h3>
+                <p>                Browse hundreds of dog breeds with photos,
+                    temperament, weight and life span.
+                </p>
+                <a href="breeds.html" class="feature-button">
+                    Explore →
+                </a>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon">🦴</div>
+                <h3>Fun Facts</h3>
+                <p>
+                    Discover interesting facts about dogs,
+                    behavior, intelligence and history.
+                </p>
+                <a href="funfacts.html" class="feature-button">
+                    Read More →
+                </a>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🏥</div>
+                    <h3>Pet Services</h3>
+                    <p>
+                        Find nearby veterinarians,
+                        pet shops and grooming services.
+                    </p>
+                    <a href="services.html" class="feature-button">
+                        Find Services →
+                    </a>
+            </article>
+        </div>
+    </section>
+    <section class="popular">
+        <h2>Popular Breeds</h2>
+        <div id="popular-breeds" class="popular-grid"></div>
+    </section>     
+</main>
+<footer>
+    <div class="footer">
+        <div class="social">
+            <a href="#"><img src="images/github.svg" alt="GitHub"></a>
+            <a href="#"><img src="images/linkedln.svg" alt="LinkedIn"></a>
+            <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+        </div>
+        <p>
+            © <span id="currentyear"></span>
+            🐶 WDD231 Final Project - Paula Jessica Silva 🐶
+        </p>
+        <p id="lastModified"></p>
+    </div>
+</footer>
+</body>
+</html>
