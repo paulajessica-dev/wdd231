@@ -1,33 +1,33 @@
-const apiKey = 'live_FcWfqIqWgS3UBJ9B3IJ7RF1Ps3wGoVwKZFYBU2MEIlMjwHXkLiOLSS64YL1a4byM';
+import { getBreeds, searchBreeds } from "./api.mjs";
+
 const gridbutton = document.querySelector("#grid");
 const listbutton = document.querySelector("#list");
-const url = "https://api.thedogapi.com/v1/breeds?limit=20";
 const container = document.querySelector("#breeds-container");
 const modal = document.querySelector("#breed-modal");
 const search = document.querySelector("#search");
 let breeds = [];
 let currentView = "grid";
 
-async function getBreeds() {
+async function loadBreeds() {
 
     try {
-        const response = await fetch(url, {
-            headers: {
-                "x-api-key": apiKey
-            }
-        });
 
-        breeds = await response.json();
+        breeds = await getBreeds();
 
-        showBreedsGrid(breeds);
+         if (currentView === "grid") {
+            showBreedsGrid(breeds);
+        } else {
+            showBreedsList(breeds);
+        }
 
     } catch (error) {
-        console.error(error);
+
+        console.error("Error loading breeds:", error);
+
     }
+}
 
-};
-
-getBreeds();
+loadBreeds();
 
 function showBreedsGrid(breeds) {
 
@@ -49,6 +49,10 @@ function showBreedsGrid(breeds) {
         temperament.classList.add("grid-temperament");
         description.classList.add("grid-description");
 
+        if (isBreedVisited(breed.id)) {
+            card.classList.add("visited");
+        }
+
         photo.src = breed.image ? breed.image.url : "images/no-image.png";
         photo.alt = breed.name;
         photo.loading = "lazy";
@@ -65,6 +69,8 @@ function showBreedsGrid(breeds) {
         button.textContent = "View Details";
 
         button.addEventListener("click", () => {
+            card.classList.add("visited");
+            saveVisitedBreed(breed.id);
             openModal(breed);
         });
 
@@ -103,6 +109,10 @@ function showBreedsList(breeds) {
         temperament.classList.add("list-temperament");
         description.classList.add("list-description");
         button.classList.add("list-button");
+
+        if (isBreedVisited(breed.id)) {
+            row.classList.add("visited");
+        }
         
         photo.src = breed.image ? breed.image.url : "images/no-image.png";
         photo.alt = breed.name;
@@ -120,6 +130,8 @@ function showBreedsList(breeds) {
         button.textContent = "View Details";
 
         button.addEventListener("click", () => {
+            row.classList.add("visited");
+            saveVisitedBreed(breed.id);
             openModal(breed);
         });
 
@@ -200,38 +212,13 @@ function openModal(breed) {
     modal.showModal();
 
     modalButton.addEventListener("click", () => {
+        
         modal.close();
     });
 };
 
 
-const searchBreeds = async (query) => {
-    
-     try{
-        const response = await fetch(
-            `https://api.thedogapi.com/v1/breeds/search?q=${query}`,
-            {
-                headers: {
-                    "x-api-key": apiKey
-                }
-            }
-        );
-
-        const results = await response.json();
-        if (currentView === "grid") {
-            showBreedsGrid(results);
-        } else {
-            showBreedsList(results);
-        }
-    }catch(error){
-
-        console.error(error);
-
-    }
-
-};
-
-search.addEventListener("input", (e) => {
+search.addEventListener("input", async (e) => {
 
     const value = e.target.value.toLowerCase();
 
@@ -244,9 +231,47 @@ search.addEventListener("input", (e) => {
         return;
     }
 
-    searchBreeds(value);
+    try {
+
+        const results = await searchBreeds(value);
+
+        if (currentView === "grid") {
+            showBreedsGrid(results);
+        } else {
+            showBreedsList(results);
+        }
+
+    } catch (error) {
+
+        console.error("Error searching breeds:", error);
+
+    }
 
 });
+
+function saveVisitedBreed(breedId) {
+
+    let visitedBreeds =
+        JSON.parse(localStorage.getItem("visitedBreeds")) || [];
+
+    if (!visitedBreeds.includes(breedId)) {
+
+        visitedBreeds.push(breedId);
+
+        localStorage.setItem(
+            "visitedBreeds",
+            JSON.stringify(visitedBreeds)
+        );
+    }
+};
+
+function isBreedVisited(breedId) {
+
+    const visitedBreeds =
+        JSON.parse(localStorage.getItem("visitedBreeds")) || [];
+
+    return visitedBreeds.includes(breedId);
+};
 
 
 

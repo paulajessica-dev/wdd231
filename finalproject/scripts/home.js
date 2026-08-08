@@ -1,31 +1,26 @@
-const apiKey = 'live_FcWfqIqWgS3UBJ9B3IJ7RF1Ps3wGoVwKZFYBU2MEIlMjwHXkLiOLSS64YL1a4byM';
+import { getPopularBreeds } from "./api.mjs";
 const popularContainer = document.querySelector("#popular-breeds");
-const url = "https://api.thedogapi.com/v1/breeds?limit=20";
 
+async function loadPopular() {
 
-async function loadPopularBreeds() {
     try {
 
-        const response = await fetch(url, {
-            headers: {
-                "x-api-key": apiKey
-            }
-        });
+        const breeds = await getPopularBreeds();
 
-        const breeds = await response.json();
+        displayPopularBreeds(breeds);
 
-       const spotlightBreeds = [...breeds].sort(() => Math.random() - 0.5).slice(0, 3);
+    } catch (error) {
 
-       displayPopularBreeds(spotlightBreeds);
+        console.error("Error loading popular breeds:", error);
 
-        } catch (error) {
-        console.error(error);
     }
-};
+}
+
+loadPopular();
 
 function displayPopularBreeds(breeds) {
     
-     popularContainer.innerHTML = "";
+    popularContainer.innerHTML = "";
 
     breeds.forEach(breed => {
 
@@ -66,4 +61,4 @@ function displayPopularBreeds(breeds) {
 
 };
 
-loadPopularBreeds();
+

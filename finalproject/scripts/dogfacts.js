@@ -1,26 +1,23 @@
-const apiKey = 'live_FcWfqIqWgS3UBJ9B3IJ7RF1Ps3wGoVwKZFYBU2MEIlMjwHXkLiOLSS64YL1a4byM';
-const url = "https://dogapi.dog/api/v2/facts?limit=3";
+import { getFacts } from "./api.mjs";
+
 const factsContainer = document.querySelector("#facts-container");
 const newFactsButton = document.querySelector("#new-facts");
+
 
 async function loadFacts() {
 
     try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
+        const facts = await getFacts();
 
-            const data = await response.json();
-            console.log(data);
-            showFacts(data.data);
+        showFacts(facts);
 
     } catch (error) {
-         console.error("Error loading facts:", error);
+
+        console.error("Error loading facts:", error);
     }
+}
 
-};
-
+loadFacts();
 
 function showFacts(facts) {
 

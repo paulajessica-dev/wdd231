@@ -1,4 +1,4 @@
-const geoApiKey = '6c9d313d4543479186144f2e447cf470';
+import { getNearbyServices } from "./api.mjs";
 const button = document.querySelector("#locationBtn");
 
 let map;
@@ -19,7 +19,8 @@ function showPosition(position) {
 
 };
 
-function createMap(latitude, longitude) {
+
+export function createMap(latitude, longitude) {
 
     if (map){
         map.remove();
@@ -38,25 +39,15 @@ function createMap(latitude, longitude) {
 
 };
 
+
 async function loadNearbyServices(latitude, longitude) {
 
     try {
 
-        const radius = 15000;
-        const url =
-        `https://api.geoapify.com/v2/places?categories=pet.veterinary,pet.shop&filter=circle:${longitude},${latitude},${radius}&bias=proximity:${longitude},${latitude}&limit=20&apiKey=${geoApiKey}`;
-
-        const response = await fetch(url);
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        const data = await response.json();
-        //console.log(data.features);
-
-        // console.log("Resposta da API:", data);
-        // console.log("Quantidade de serviços:", data.features.length);
+        const services = await getNearbyServices(
+            latitude,
+            longitude
+        );
 
         const servicesList = document.querySelector("#services-list");
 
@@ -64,7 +55,7 @@ async function loadNearbyServices(latitude, longitude) {
 
         servicesList.innerHTML = "";
 
-        data.features.forEach((service, index) => {
+        services.forEach((service, index) => {
 
             // console.log("Serviço:", service.properties);
 

@@ -54,9 +54,9 @@ body{
 ); */
 }
 
-/* main {        
-    margin:1rem 1rem;    
-} */
+main {        
+    margin-bottom:1rem;    
+}
 
 h1, h2 {
     display: flex;
@@ -191,7 +191,7 @@ button:hover {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;    
 }
 
@@ -314,6 +314,22 @@ button:hover {
 
 .list-row:nth-child(odd) {
     background: var(--secondary-light);
+}
+
+.grid-card.visited,
+.list-row.visited {
+    background-color: var(--background);
+    border: 2px solid var(--primary-clear);
+}
+
+.grid-card.visited::before,
+.list-row.visited::before {
+    content: "✓ Viewed";
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
 }
 
 dialog {
