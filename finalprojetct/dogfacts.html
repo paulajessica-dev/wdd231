@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
     <script src="scripts/common.js" defer></script>
-    <script src="scripts/home.js" defer></script>
+    <script src="scripts/dogfacts.js" defer></script>
 </head>
 <body>
 <header>
@@ -40,62 +40,14 @@
     </nav>
 </header>
 <main>        
-    <section class="hero">
-        <h2 class="visually-hidden"></h2>
-            <picture>
-            <source  srcset="images/breeds_5.webp"  media="(min-width:768px)">
-            <img src="images/hero-small.webp" alt="Panoramic view of Many Dogs"  width="1200" height="600" loading="lazy">
-        </picture>
-        <div class="hero-content">
-            <h1>DogCare Hub</h1>
-            <p>
-                Discover dog breeds, learn amazing facts,
-                and find trusted pet services all in one place.
-            </p>
-            <a href="breeds.html" class="cta-button">Explore Breeds</a>
-        </div>
-    </section>        
-    <section class="features">
-    <h2>What can you explore?</h2>
-    <div class="features-grid">
-        <article class="feature-card">
-            <div class="feature-icon">🐶</div>
-                <h3>Breeds</h3>
-                <p>                Browse hundreds of dog breeds with photos,
-                    temperament, weight and life span.
-                </p>
-                <a href="breeds.html" class="feature-button">
-                    Explore →
-                </a>
-        </article>
-        <article class="feature-card">
-            <div class="feature-icon">🦴</div>
-                <h3>Facts</h3>
-                <p>
-                    Discover interesting facts about dogs,
-                    behavior, intelligence and history.
-                </p>
-                <a href="dogfacts.html" class="feature-button">
-                    Read More →
-                </a>
-            </article>
-            <article class="feature-card">
-                <div class="feature-icon">🏥</div>
-                    <h3>Services</h3>
-                    <p>
-                        Find nearby veterinarians,
-                        pet shops and grooming services.
-                    </p>
-                    <a href="services.html" class="feature-button">
-                        Find Services →
-                    </a>
-            </article>
-        </div>
+    <section class="facts">
+        <h1>Dog Curiosities</h1>
+        <p class="facts-intro">
+            Discover interesting and surprising facts about dogs.
+        </p>
+        <div id="facts-container" class="facts-grid"></div>
+        <button id="new-facts" type="button">🐾 New Facts</button>
     </section>
-    <section class="popular">
-        <h2>Popular Breeds</h2>
-        <div id="popular-breeds" class="popular-grid"></div>
-    </section>     
 </main>
 <footer>
     <div class="footer">
