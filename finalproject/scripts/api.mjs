@@ -120,3 +120,79 @@ export async function getNearbyServices(latitude, longitude) {
 };
 
 
+export async function voteForBreed(imageId) {
+
+    try {
+        const response = await fetch(
+            "https://api.thedogapi.com/v1/votes",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-api-key": apiKey
+                },
+                body: JSON.stringify({image_id: imageId,value: 1})
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        return await response.json();
+
+    } catch (error) {
+        console.error("Error voting for breed:", error);
+        throw error;
+    }
+};
+
+export async function getVotes() {
+
+    try {
+        const response = await fetch(
+            "https://api.thedogapi.com/v1/votes?limit=100",
+            {
+                headers: {
+                    "x-api-key": apiKey
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const votes = await response.json();
+
+        return votes;
+
+    } catch (error) {
+        console.error("Error loading votes:", error);
+        throw error;
+    }
+};
+
+export async function getVoteBreed(imageId) {
+
+    try {
+        const response = await fetch(
+            `https://api.thedogapi.com/v1/images/${imageId}`,
+            {
+                headers: {
+                    "x-api-key": apiKey
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        return await response.json();
+
+    } catch (error) {
+
+        console.error("Error loading vote image:", error);
+        return null;
+
+    }
+};

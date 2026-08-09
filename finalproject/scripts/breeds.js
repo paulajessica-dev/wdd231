@@ -1,4 +1,4 @@
-import { getBreeds, searchBreeds } from "./api.mjs";
+import { getBreeds, searchBreeds, voteForBreed, getVotes, getVoteBreed } from "./api.mjs";
 
 const gridbutton = document.querySelector("#grid");
 const listbutton = document.querySelector("#list");
@@ -194,6 +194,16 @@ function openModal(breed) {
     modalOrigin.innerHTML = `<strong>Origin:</strong> ${breed.origin ?? "Unknown"}`;
     modalGroup.innerHTML = `<strong>Breed Group:</strong> ${breed.breed_group ?? "Unknown"}`;
 
+    const voteForm = document.createElement("form");
+    const voteLabel = document.createElement("label");    
+    const voteButton = document.createElement("button");
+
+    voteForm.classList.add("vote-form");
+    voteLabel.textContent = "❤️ Is this your favorite breed?";
+
+    voteButton.type = "submit";
+    voteButton.textContent = "Vote";
+
     info.appendChild(modalName);
     info.appendChild(modalTemperament);
     info.appendChild(modalWeight);
@@ -201,7 +211,11 @@ function openModal(breed) {
     info.appendChild(modalLife);
     info.appendChild(modalOrigin);
     info.appendChild(modalGroup);
+    
 
+    voteForm.appendChild(voteLabel);
+    voteForm.appendChild(voteButton);
+    info.appendChild(voteForm);
 
     content.appendChild(modalPhoto);
     content.appendChild(info);
@@ -211,15 +225,28 @@ function openModal(breed) {
 
     modal.showModal();
 
+    console.log(breeds[0]);
+
     modalButton.addEventListener("click", () => {
         
         modal.close();
+    });
+
+    voteForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        try {
+
+            await voteForBreed(breed.image.id);
+            voteButton.textContent = "✓ Voted!";
+            voteButton.disabled = true;
+        } catch (error) {
+            console.error("Error submitting vote:", error);
+        }
     });
 };
 
 
 search.addEventListener("input", async (e) => {
-
     const value = e.target.value.toLowerCase();
 
     if (value === "") {
@@ -234,7 +261,6 @@ search.addEventListener("input", async (e) => {
     try {
 
         const results = await searchBreeds(value);
-
         if (currentView === "grid") {
             showBreedsGrid(results);
         } else {
@@ -251,13 +277,9 @@ search.addEventListener("input", async (e) => {
 
 function saveVisitedBreed(breedId) {
 
-    let visitedBreeds =
-        JSON.parse(localStorage.getItem("visitedBreeds")) || [];
-
+    let visitedBreeds = JSON.parse(localStorage.getItem("visitedBreeds")) || [];
     if (!visitedBreeds.includes(breedId)) {
-
         visitedBreeds.push(breedId);
-
         localStorage.setItem(
             "visitedBreeds",
             JSON.stringify(visitedBreeds)
@@ -267,11 +289,98 @@ function saveVisitedBreed(breedId) {
 
 function isBreedVisited(breedId) {
 
-    const visitedBreeds =
-        JSON.parse(localStorage.getItem("visitedBreeds")) || [];
-
+    const visitedBreeds = JSON.parse(localStorage.getItem("visitedBreeds")) || [];
     return visitedBreeds.includes(breedId);
 };
 
 
+async function loadFavoriteBreeds() {
+
+    try {
+
+        const votes = await getVotes();
+
+        console.log("TODOS OS VOTOS:", votes);
+        console.log("QUANTIDADE:", votes.length);       
+
+        const voteCount = {};
+        
+        for (const vote of votes) {
+
+            const image = await getVoteBreed(vote.image_id);
+
+            if (!image || !image.breeds?.length) {
+                continue;
+            }
+
+            const breed = image.breeds[0];
+
+            if (!voteCount[breed.id]) {
+                voteCount[breed.id] = {
+                    breed: breed,
+                    image: image.url,
+                    votes: 0
+                };
+            }
+            voteCount[breed.id].votes++;
+            
+        };
+        
+
+        const favorites = Object.values(voteCount).sort((a, b) => b.votes - a.votes).slice(0, 5);
+        showFavoriteBreeds(favorites);
+
+    } catch (error) {
+        console.error("Error loading favorite breeds:", error);
+    }
+};
+
+function showFavoriteBreeds(favorites) {
+
+    const container = document.querySelector("#favorite-list");
+
+    container.innerHTML = "";
+
+    if (favorites.length === 0) {
+        container.innerHTML = "<p>No votes yet. Be the first to vote!</p>";
+        return;
+    }
+
+    favorites.forEach((item, index) => {
+
+        const card = document.createElement("article");       
+        const position = document.createElement("span");
+        const photo = document.createElement("img");
+        const info = document.createElement("div");
+        const name = document.createElement("h3");
+        const votes = document.createElement("p");
+
+        card.classList.add("favorite-card");
+        position.classList.add("favorite-position");
+        photo.classList.add("favorite-photo");
+        info.classList.add("favorite-info");
+
+        position.textContent = `#${index + 1}`;
+
+        photo.src = item.image ?? "images/no-image.png";
+        photo.alt = item.breed.name;
+        photo.loading = "lazy";
+
+        name.textContent = item.breed.name;
+
+        votes.textContent = `❤️ ${item.votes} vote${item.votes !== 1 ? "s" : ""}`;
+
+        info.appendChild(name);
+        info.appendChild(votes);
+
+        card.appendChild(position);
+        card.appendChild(photo);
+        card.appendChild(info);
+
+        container.appendChild(card);
+
+    });
+};
+
+loadFavoriteBreeds();
 
