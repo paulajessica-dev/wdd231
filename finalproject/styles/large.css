@@ -28,10 +28,12 @@
         white-space: nowrap;
         color: var(--primary-orange-dark);
     }
-    
-    #popular-grid{
-        grid-template-columns:1fr;
-    }
+
+    #popular-breeds {
+        display: grid;
+        grid-template-columns:repeat(3, 1fr);
+
+    }  
 
     .facts-grid {
         display: grid;
@@ -42,6 +44,12 @@
     .facts-grid {
         display: grid;
         
+    }
+
+    #favorite-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;    
     }
 
 }

@@ -422,6 +422,11 @@ dialog::backdrop {
 
 }
 
+#favorite-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;    
+}
 
 .favorite-breeds {
     max-width: 1000px;
@@ -441,12 +446,6 @@ dialog::backdrop {
     text-align: center;
     margin-bottom: 1rem;
     color: var(--primary-dark)
-}
-
-#favorite-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
 }
 
 .favorite-card {
@@ -485,7 +484,7 @@ dialog::backdrop {
 }
 
 /* =========================
-   HERO
+   HOME
 ========================= */
 
 .hero {
@@ -542,7 +541,7 @@ dialog::backdrop {
 
 #popular-breeds {
     display: grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:1fr;
     gap: 1rem;
     margin-top:.9rem;
 }
@@ -615,6 +614,71 @@ dialog::backdrop {
     align-items:center;
     text-align:center;
     font-size: var(--fs-small);
+}
+
+.breed-search-form {
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+    background: var(--background);
+    border-radius: 8px;
+}
+
+.breed-search-form h2 {
+    margin-bottom: 0.5rem;
+}
+
+.breed-search-form > p {
+    margin-bottom: .5rem;
+    font-size: var(--fs-body);    
+    color: var(--primary-orange-dark);
+
+}
+
+.breed-search-form form {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: var(--fs-body);    
+    color: var(--primary-orange-dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 220px;
+    padding: 0.3rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: var(--fs-body);
+}
+
+.breed-search-form button {
+    width: 180px;  
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: var(--background);
+    font-weight: bold;
+    font-size: var(--fs-body);
+    cursor: pointer;
+}
+
+.breed-search-form button:hover {
+    opacity: 0.9;
 }
 
 

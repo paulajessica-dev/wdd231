@@ -1,5 +1,20 @@
-import { getPopularBreeds } from "./api.mjs";
+import { getPopularBreeds, searchBreeds } from "./api.mjs";
 const popularContainer = document.querySelector("#popular-breeds");
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+const breed = params.get("breed");
+
+let breeds = [];
+let currentView = "grid";
+
+
+
+const nameFromForm = params.get("name");
+const breedFromForm = params.get("breed");
+
+// console.log("Name:", nameFromForm);
+// console.log("Breed:", breedFromForm);
 
 async function loadPopular() {
 
@@ -61,4 +76,19 @@ function displayPopularBreeds(breeds) {
 
 };
 
+if (breedFromForm) {
+    search.value = breedFromForm;
+    try {
+        const results = await searchBreeds(breedFromForm);
 
+        if (currentView === "grid") {
+            showBreedsGrid(results);
+        } else {
+            showBreedsList(results);
+        }
+
+    } catch (error) {
+        console.error("Error searching breed from form:", error);
+
+    }
+};

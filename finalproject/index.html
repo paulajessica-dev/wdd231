@@ -95,7 +95,35 @@
     <section class="popular">
         <h2>Popular Breeds</h2>
         <div id="popular-breeds" class="popular-grid"></div>
-    </section>     
+    </section>
+    <section class="breed-search-form">
+        <h2>Looking for a specific breed?</h2>
+        <p>Tell us what you are looking for and explore the breed.</p>
+
+    <form action="breeds.html" method="GET">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="breed">Choose a Breed</label>
+            <select id="breed" name="breed" required>
+                <option value="">Select a breed</option>
+                <option value="Labrador Retriever">Labrador Retriever</option>
+                <option value="Golden Retriever">Golden Retriever</option>
+                <option value="German Shepherd">German Shepherd</option>
+                <option value="Bulldog">Bulldog</option>
+            </select>
+        </div>
+        <button type="submit">Explore Breed</button>
+    </form>
+</section>
 </main>
 <footer>
     <div class="footer">

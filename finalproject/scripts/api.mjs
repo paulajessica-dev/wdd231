@@ -44,7 +44,7 @@ export async function searchBreeds(query) {
 
     try {
         const response = await fetch(
-            `https://api.thedogapi.com/v1/breeds/search?q=${query}`,
+            `https://api.thedogapi.com/v1/breeds/search?q=${encodeURIComponent(query)}`,
             {
                 headers: {
                     "x-api-key": apiKey

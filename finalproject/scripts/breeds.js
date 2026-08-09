@@ -7,10 +7,33 @@ const modal = document.querySelector("#breed-modal");
 const search = document.querySelector("#search");
 let breeds = [];
 let currentView = "grid";
+const params = new URLSearchParams(window.location.search);
+const nameFromForm = params.get("name");
+const breedFromForm = params.get("breed");
+
+console.log("Name:", nameFromForm);
+console.log("Breed:", breedFromForm);
 
 async function loadBreeds() {
 
     try {
+
+        breeds = await getBreeds(); 
+
+        if (breedFromForm) {
+
+            search.value = breedFromForm;
+
+            const results = await searchBreeds(breedFromForm);
+
+            if (currentView === "grid") {
+                showBreedsGrid(results);
+            } else {
+                showBreedsList(results);
+            }
+
+            return;
+        }
 
         breeds = await getBreeds();
 
@@ -253,6 +276,11 @@ search.addEventListener("input", async (e) => {
     const value = e.target.value.toLowerCase();
 
     if (value === "") {
+
+        const url = new URL(window.location.href);
+        url.searchParams.delete("breed");
+        history.replaceState(null, "", url);
+
         if (currentView === "grid") {
             showBreedsGrid(breeds);
         } else {
@@ -301,12 +329,12 @@ async function loadFavoriteBreeds() {
 
     try {
 
-        console.log("Atualizando favoritos...");
+        // console.log("Atualizando favoritos...");
 
         const votes = await getVotes();
 
-        console.log("TODOS OS VOTOS:", votes);
-        console.log("QUANTIDADE:", votes.length);       
+        // console.log("TODOS OS VOTOS:", votes);
+        // console.log("QUANTIDADE:", votes.length);       
 
         const voteCount = {};
         
