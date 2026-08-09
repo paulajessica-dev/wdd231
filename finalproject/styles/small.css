@@ -383,8 +383,7 @@ dialog::backdrop {
     );
 }
 
-.modal-info h2{
-    font-size:2rem;
+.modal-info h2{  
     margin:0;
     color:var(--primary);
     font-size: var(--fs-body);
@@ -393,7 +392,6 @@ dialog::backdrop {
 .modal-info p{
     margin:0;
     line-height:1.6;
-
 }
 
 .close-modal {
@@ -703,7 +701,6 @@ dialog::backdrop {
     display:flex;
     flex-direction:column;
     overflow-y: auto;
-    flex-direction: column;
     height: 400px;
     gap: .8rem;
     padding-right: .4rem;
