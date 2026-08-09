@@ -521,10 +521,6 @@ dialog::backdrop {
 
 }
 
-.hero-content h1 {  
-    color: var(--primary-orange);
-
-}
 
 .cta-button {
     display:inline-block;
