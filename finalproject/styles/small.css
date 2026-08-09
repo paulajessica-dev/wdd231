@@ -74,7 +74,7 @@ h1, h2 {
     margin: -1px;
     padding: 0;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
     white-space: nowrap;
     border: 0;
 }
@@ -135,7 +135,7 @@ nav {
     display:none;
     flex-direction:column;
     list-style:none;
-    background:var(--accentclear);
+    background:var(--background);
     padding: 0;
     margin: 0;
 }
@@ -227,7 +227,7 @@ button:hover {
 .grid-info p {
     display: block;  
     align-items: start;
-    word-break: break-word;
+    overflow-wrap: anywhere;
     color: var(--primary);
     padding-bottom: 1rem;
     font-size: var(--fs-small);
@@ -313,7 +313,7 @@ button:hover {
 }
 
 .list-row:nth-child(odd) {
-    background: var(--secondary-light);
+    background: var(--primary-light-transparent);
 }
 
 .grid-card.visited,
@@ -514,7 +514,7 @@ dialog::backdrop {
     flex-direction:column;  
     align-items:center;
     text-align:center;
-    color: var(--accentclear);
+    color: var(--background);
 }
 
 .hero-content p {

@@ -1,6 +1,10 @@
 const apiKey = 'live_FcWfqIqWgS3UBJ9B3IJ7RF1Ps3wGoVwKZFYBU2MEIlMjwHXkLiOLSS64YL1a4byM';
 const geoApiKey = '6c9d313d4543479186144f2e447cf470';
 
+
+
+
+// BREEDS PAGE
 export async function getBreeds() {
 
     try {
@@ -20,6 +24,7 @@ export async function getBreeds() {
 
 };
 
+// FACTS PAGE
 export async function getFacts() {
 
     try {
@@ -40,6 +45,7 @@ export async function getFacts() {
 
 };
 
+// BREEDS PAGE
 export async function searchBreeds(query) {
 
     try {
@@ -66,11 +72,11 @@ export async function searchBreeds(query) {
     }
 }
 
-
+//HOME PAGE
 export async function getPopularBreeds() {
     try {
 
-        const response = await fetch("https://api.thedogapi.com/v1/breeds?limit=20", {
+        const response = await fetch("https://api.thedogapi.com/v1/breeds?limit=3", {
             headers: {
                 "x-api-key": apiKey
             }
@@ -88,7 +94,7 @@ export async function getPopularBreeds() {
 };
 
 
-
+// SERVICES PAGE
 export async function getNearbyServices(latitude, longitude) {
 
     try {
@@ -119,13 +125,14 @@ export async function getNearbyServices(latitude, longitude) {
 
 };
 
+// BREEDS PAGE
 export async function voteForBreed(imageId) {
 
     try {
         const response = await fetch(
             "https://api.thedogapi.com/v1/votes",
             {
-                method: "POST",
+                method: "POST", //PUSH DATA
                 headers: {
                     "Content-Type": "application/json",
                     "x-api-key": apiKey
@@ -145,6 +152,7 @@ export async function voteForBreed(imageId) {
     }
 };
 
+// BREEDS PAGE
 export async function getVotes() {
 
     try {
@@ -172,6 +180,7 @@ export async function getVotes() {
     }
 };
 
+// BREEDS PAGE
 export async function getVoteBreed(imageId) {
 
     try {
