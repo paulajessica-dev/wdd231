@@ -119,7 +119,6 @@ export async function getNearbyServices(latitude, longitude) {
 
 };
 
-
 export async function voteForBreed(imageId) {
 
     try {
@@ -150,11 +149,12 @@ export async function getVotes() {
 
     try {
         const response = await fetch(
-            "https://api.thedogapi.com/v1/votes?limit=100",
+            `https://api.thedogapi.com/v1/votes?limit=100&_=${Date.now()}`,
             {
                 headers: {
                     "x-api-key": apiKey
-                }
+                },
+                cache: "no-store"
             }
         );
 

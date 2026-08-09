@@ -239,6 +239,9 @@ function openModal(breed) {
             await voteForBreed(breed.image.id);
             voteButton.textContent = "✓ Voted!";
             voteButton.disabled = true;
+            
+            await loadFavoriteBreeds();
+
         } catch (error) {
             console.error("Error submitting vote:", error);
         }
@@ -298,6 +301,8 @@ async function loadFavoriteBreeds() {
 
     try {
 
+        console.log("Atualizando favoritos...");
+
         const votes = await getVotes();
 
         console.log("TODOS OS VOTOS:", votes);
@@ -327,7 +332,7 @@ async function loadFavoriteBreeds() {
         };
         
 
-        const favorites = Object.values(voteCount).sort((a, b) => b.votes - a.votes).slice(0, 5);
+        const favorites = Object.values(voteCount).sort((a, b) => b.votes - a.votes);
         showFavoriteBreeds(favorites);
 
     } catch (error) {
